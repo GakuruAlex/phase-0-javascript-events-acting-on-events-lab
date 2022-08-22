@@ -1,4 +1,5 @@
 const dodger = document.getElementById("dodger");
+dodger.style.backgroundColor = "#FF69B4";
 
 function moveDodgerLeft() {
     const leftNumbers = dodger.style.left.replace("px", "");
@@ -8,11 +9,6 @@ function moveDodgerLeft() {
       dodger.style.left = `${left - 1}px`;
     }
   }
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "ArrowLeft") {
-      moveDodgerLeft();
-    }
-  });
 
   function moveDodgerRight(){
     const leftNumbers = dodger.style.left.replace("px", "");
@@ -28,4 +24,11 @@ function moveDodgerLeft() {
     if (e.key === "ArrowRight") {
       moveDodgerRight();
     }
-  });
+    else if(e.key === "ArrowLeft"){
+      moveDodgerLeft();
+    }
+    else{
+      alert("Key out of bound");
+    }
+  }
+  );
